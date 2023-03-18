@@ -1,7 +1,5 @@
+import header from "./layouts/header";
+
 const body = document.querySelector("body");
 
-const h1 = document.createElement("h1");
-
-h1.innerText = "TEST";
-
-body.append(h1);
+header(body);
