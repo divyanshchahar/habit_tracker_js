@@ -29,4 +29,5 @@ module.exports = {
       title: "Output Management",
     }),
   ],
+  mode: "production",
 };
