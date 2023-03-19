@@ -11,6 +11,6 @@ rootDiv.setAttribute("id", "root");
 buttonContainer.classList.add("button-container");
 
 header(body);
-body.append(buttonContainer);
 body.append(rootDiv);
-datePicker(buttonContainer);
+rootDiv.append(buttonContainer);
+datePicker(buttonContainer, rootDiv);
