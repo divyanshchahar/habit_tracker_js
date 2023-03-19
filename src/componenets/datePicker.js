@@ -2,7 +2,8 @@ import calendar from "../layouts/calendar";
 
 /**
  * Function to render `Calendar` on change of date
- * @param {HTMLElement} buttonContainer
+ * @param {HTMLElement} buttonContainer - HTML Elelment to contain input type of month
+ * @param {HTMLElement} rootDiv - HTML Elelment to contain calendar
  */
 function datePicker(buttonContainer, rootDiv) {
   const monthSelector = document.createElement("input");
