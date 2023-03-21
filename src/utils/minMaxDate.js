@@ -9,9 +9,6 @@ function minMaxDate() {
     today.getMonth() < 10 ? `0${today.getMonth() + 1}` : `${today.getMonth()}`;
   const date = `${today.getDate()}`;
 
-  console.log(`${year}-${month}-${date}`);
-  console.log(`${year}-12-31`);
-
   return [`${year}-${month}-${date}`, `${year}-12-31`];
 }
 
