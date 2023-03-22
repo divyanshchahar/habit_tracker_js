@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from "uuid";
 function addHabit(e) {
   e.preventDefault();
 
-  console.log(typeof e);
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA")) || [];
 
   if (!document.querySelector("#habit").value) {
