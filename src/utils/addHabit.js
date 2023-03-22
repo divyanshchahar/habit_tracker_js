@@ -1,4 +1,5 @@
 import utcLikeDate from "./utcLikeDate";
+import { v4 as uuidv4 } from "uuid";
 
 /**
  * Adds a new habit
@@ -36,6 +37,7 @@ function addHabit(e) {
 
   if (!habitExists) {
     habitData.push({
+      id: uuidv4(),
       name: document.querySelector("#habit").value,
       startDate: utcLikeDate(document.querySelector("#start-date").value),
       endDate: utcLikeDate(document.querySelector("#end-date").value),
