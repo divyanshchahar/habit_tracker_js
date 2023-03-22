@@ -8,6 +8,7 @@ import "./index.css";
 const body = document.querySelector("body");
 const rootDiv = document.createElement("div");
 const addButton = document.createElement("button");
+const buttonContainer = document.createElement("div");
 
 rootDiv.setAttribute("id", "root");
 
@@ -18,12 +19,12 @@ addButton.classList.add("btn");
 addButton.addEventListener("click", () => {
   inputform(rootDiv);
 });
+buttonContainer.classList.add("button-container");
 
 header(body);
-
 rootDiv.append(addButton);
-
-datePicker(rootDiv);
+rootDiv.append(buttonContainer);
+datePicker(buttonContainer, rootDiv);
 
 body.append(rootDiv);
 
