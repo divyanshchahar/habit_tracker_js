@@ -7,8 +7,8 @@ import "./index.css";
 
 const body = document.querySelector("body");
 const rootDiv = document.createElement("div");
-const addButton = document.createElement("button");
 const buttonContainer = document.createElement("div");
+const addButton = document.createElement("button");
 
 rootDiv.setAttribute("id", "root");
 
@@ -16,16 +16,18 @@ addButton.innerText = "+";
 
 addButton.classList.add("btn");
 
+buttonContainer.classList.add("button-container");
+
 addButton.addEventListener("click", () => {
   inputform(rootDiv);
 });
-buttonContainer.classList.add("button-container");
 
 header(body);
-rootDiv.append(addButton);
-rootDiv.append(buttonContainer);
+buttonContainer.append(addButton);
 datePicker(buttonContainer, rootDiv);
+rootDiv.append(buttonContainer);
 
+body.append(buttonContainer);
 body.append(rootDiv);
 
 minMaxDate();
