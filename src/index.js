@@ -1,7 +1,6 @@
 import header from "./layouts/header";
 import datePicker from "./componenets/datePicker";
 import inputform from "./layouts/inputform";
-import minMaxDate from "./utils/minMaxDate";
 
 import "./index.css";
 
