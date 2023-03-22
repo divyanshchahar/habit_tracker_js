@@ -29,5 +29,3 @@ rootDiv.append(buttonContainer);
 
 body.append(buttonContainer);
 body.append(rootDiv);
-
-minMaxDate();
