@@ -1,6 +1,7 @@
 import dateGenerator from "../utils/dateGenerator";
 import processYearMonth from "../utils/processYearMonth";
 import getHabits from "../utils/getHabits";
+import renderDayReport from "../utils/renderDayReport";
 
 /**
  * Function to render `Calendar`
@@ -34,10 +35,16 @@ function calendar(rootElement, dateString) {
     const p = document.createElement("p");
 
     p.innerText = getHabits(item, habitData);
+
     div.innerText = item.getDate();
+
     div.classList.add(
       item.getMonth() == month ? "current-month" : "other-month"
     );
+
+    div.addEventListener("click", () => {
+      renderDayReport(p.innerText, rootElement, item);
+    });
 
     div.append(p);
     calendarElement.append(div);
