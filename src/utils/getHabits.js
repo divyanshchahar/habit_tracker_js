@@ -6,6 +6,7 @@
  */
 function getHabits(date, habitData) {
   let habitCount = 0;
+  let habitCompleted = 0;
 
   habitData.map((item) => {
     const startDate = new Date(item.startDate);
@@ -13,10 +14,17 @@ function getHabits(date, habitData) {
 
     if (date >= startDate && date <= endDate) {
       habitCount += 1;
+      if (
+        item.completed.includes(
+          `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+        )
+      ) {
+        habitCompleted = +1;
+      }
     }
   });
 
-  return habitCount;
+  return `${habitCompleted}/${habitCount}`;
 }
 
 export default getHabits;
