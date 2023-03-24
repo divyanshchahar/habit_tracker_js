@@ -17,6 +17,26 @@
   gap: 2.5%;
 }
 
+.current-month,
+.other-month {
+  border: 1px solid black;
+  font-size: 1.25rem;
+  padding: 5%;
+}
+
+.current-month {
+  background-color: rgb(200, 200, 255, 0.1);
+}
+
+.current-month,
+.other-month:hover {
+  cursor: pointer;
+}
+
+.daily-count {
+  font-size: 0.75rem;
+}
+
 .hidden {
   display: none;
 }

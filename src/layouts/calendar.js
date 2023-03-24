@@ -34,6 +34,7 @@ function calendar(rootElement, dateString) {
     const div = document.createElement("div");
     const p = document.createElement("p");
 
+    p.classList.add("daily-count");
     p.innerText = getHabits(item, habitData);
 
     div.innerText = item.getDate();
