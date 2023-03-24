@@ -3,7 +3,6 @@ import utcLikeDate from "./utcLikeDate";
 function editHabit(e) {
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
 
-  console.log(habitData);
   const startDate = new Date(
     utcLikeDate(document.querySelector("#edit-start-date").value)
   );
