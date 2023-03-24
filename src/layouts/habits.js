@@ -13,9 +13,10 @@ function habits(parentElement) {
   if (habitData) {
     const [minDate, maxDate] = minMaxDate();
 
-    const span = document.createElement("span");
+    const span = document.createElement("dialog");
 
     span.setAttribute("id", "habit-list");
+    span.classList.add("popup");
 
     habitData.map((item) => {
       const div = document.createElement("div");
@@ -28,6 +29,7 @@ function habits(parentElement) {
       const doneButton = document.createElement("button");
 
       div.setAttribute("id", item.id);
+      div.classList.add("edit-habit-field");
       input.setAttribute("type", "text");
       input.setAttribute("id", "edit-habit");
       input.setAttribute("value", item.name);
@@ -87,6 +89,7 @@ function habits(parentElement) {
       span.append(div);
     });
     parentElement.append(span);
+    span.showModal();
   }
 }
 

@@ -1,13 +1,66 @@
-/* * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-} */
+}
 
 #calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
+}
+
+.button-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 2.5%;
+  gap: 2.5%;
+}
+
+.current-month,
+.other-month {
+  border: 1px solid black;
+  font-size: 1.25rem;
+  padding: 5%;
+}
+
+.current-month {
+  background-color: rgb(200, 200, 255, 0.1);
+}
+
+.current-month,
+.other-month:hover {
+  cursor: pointer;
+}
+
+.daily-count {
+  font-size: 0.75rem;
+}
+
+.popup {
+  padding: 1.5rem;
+  margin: auto;
+  border-radius: 0.5vw;
+}
+
+.popup::backdrop {
+  background: white;
+  opacity: 0.9;
+}
+
+.form-container {
+  padding: 1rem;
+  border-radius: 0.5vw;
+}
+
+.form-container label {
+  margin-left: 1rem;
+}
+
+.edit-habit-field {
+  display: flex;
+  gap: 1%;
+  margin-top: 1vw;
 }
 
 .hidden {

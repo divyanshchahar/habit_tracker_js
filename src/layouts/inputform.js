@@ -8,6 +8,7 @@ function inputform(parentElement) {
 
   const [minDate, maxDate] = minMaxDate();
 
+  const popup = document.createElement("dialog");
   const form = document.createElement("form");
   const inputLabel = document.createElement("label");
   const startDateLabel = document.createElement("label");
@@ -18,6 +19,7 @@ function inputform(parentElement) {
   const submitButton = document.createElement("input");
 
   form.setAttribute("id", "input-form");
+  popup.classList.add("popup");
 
   inputLabel.setAttribute("for", "habit");
   startDate.setAttribute("for", "start-date");
@@ -60,7 +62,10 @@ function inputform(parentElement) {
   form.append(endDate);
   form.append(submitButton);
 
-  parentElement.append(form);
+  popup.append(form);
+  parentElement.append(popup);
+
+  popup.showModal();
 }
 
 export default inputform;

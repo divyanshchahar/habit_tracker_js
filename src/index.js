@@ -34,9 +34,9 @@ editButton.addEventListener("click", () => {
 });
 
 header(rootDiv);
+datePicker(buttonContainer, rootDiv);
 buttonContainer.append(addButton);
 buttonContainer.append(editButton);
-datePicker(buttonContainer, rootDiv);
 rootDiv.append(buttonContainer);
 
 rootDiv.append(buttonContainer);
