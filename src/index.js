@@ -9,6 +9,7 @@ import "./index.css";
 
 const today = new Date();
 
+const body = document.querySelector("body");
 const rootDiv = document.createElement("div");
 const buttonContainer = document.createElement("div");
 const addButton = document.createElement("button");
