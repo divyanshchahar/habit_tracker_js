@@ -9,7 +9,6 @@ import "./index.css";
 
 const today = new Date();
 
-const body = document.querySelector("body");
 const rootDiv = document.createElement("div");
 const buttonContainer = document.createElement("div");
 const addButton = document.createElement("button");
@@ -33,7 +32,7 @@ editButton.addEventListener("click", () => {
   habits(rootDiv);
 });
 
-header(body);
+header(rootDiv);
 buttonContainer.append(addButton);
 buttonContainer.append(editButton);
 datePicker(buttonContainer, rootDiv);
