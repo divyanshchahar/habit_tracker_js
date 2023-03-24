@@ -3,7 +3,11 @@ import datePicker from "./componenets/datePicker";
 import inputform from "./layouts/inputform";
 import habits from "./layouts/habits";
 
+import calendar from "./layouts/calendar";
+
 import "./index.css";
+
+const today = new Date();
 
 const body = document.querySelector("body");
 const rootDiv = document.createElement("div");
@@ -37,3 +41,5 @@ rootDiv.append(buttonContainer);
 
 body.append(buttonContainer);
 body.append(rootDiv);
+
+calendar(rootDiv, `${today.getFullYear()}-${today.getMonth() + 1}`);
