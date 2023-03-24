@@ -39,7 +39,7 @@ buttonContainer.append(editButton);
 datePicker(buttonContainer, rootDiv);
 rootDiv.append(buttonContainer);
 
-body.append(buttonContainer);
+rootDiv.append(buttonContainer);
 body.append(rootDiv);
 
 calendar(rootDiv, `${today.getFullYear()}-${today.getMonth() + 1}`);
