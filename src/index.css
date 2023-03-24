@@ -37,6 +37,26 @@
   font-size: 0.75rem;
 }
 
+.popup {
+  padding: 1.5rem;
+  margin: auto;
+  border-radius: 0.5vw;
+}
+
+.popup::backdrop {
+  background: white;
+  opacity: 0.9;
+}
+
+.form-container {
+  padding: 1rem;
+  border-radius: 0.5vw;
+}
+
+.form-container label {
+  margin-left: 1rem;
+}
+
 .hidden {
   display: none;
 }

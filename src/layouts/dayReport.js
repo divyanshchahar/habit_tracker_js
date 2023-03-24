@@ -6,11 +6,15 @@ function dayReport(parentElement, date) {
   }
 
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
+
+  const popup = document.createElement("dialog");
   const span = document.createElement("span");
   const fieldset = document.createElement("fieldset");
   const legend = document.createElement("legend");
 
+  popup.classList.add("popup");
   legend.innerText = "Habits";
+  fieldset.classList.add("form-container");
   fieldset.append(legend);
 
   habitData.map((item) => {
@@ -18,6 +22,7 @@ function dayReport(parentElement, date) {
     const endDate = new Date(item.endDate);
 
     if (date >= startDate && date <= endDate) {
+      const div = document.createElement("div");
       const checkbox = document.createElement("input");
       const label = document.createElement("label");
 
@@ -30,15 +35,20 @@ function dayReport(parentElement, date) {
 
       label.innerText = item.name;
 
-      fieldset.append(checkbox);
-      fieldset.append(label);
+      div.append(checkbox);
+      div.append(label);
+      fieldset.append(div);
     }
   });
 
   span.append(fieldset);
 
   span.setAttribute("id", "today-habit");
-  parentElement.append(span);
+
+  popup.append(span);
+  parentElement.append(popup);
+
+  popup.showModal();
 }
 
 export default dayReport;
