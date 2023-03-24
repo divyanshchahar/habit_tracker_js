@@ -10,6 +10,13 @@
   text-align: center;
 }
 
+.button-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 2.5%;
+  gap: 2.5%;
+}
+
 .hidden {
   display: none;
 }
