@@ -1,6 +1,11 @@
 import toggleHabits from "../utils/toggleHabits";
 
-function dayReport(parentElement, date) {
+/**
+ * Funcion to render day report
+ * @param {HTMLElement} parentContainer - HTML eleemt which will be parent to the UI
+ * @param {Date} date - date whose report is to be rendered
+ */
+function dayReport(parentContainer, date) {
   if (document.querySelector("#today-habit")) {
     document.querySelector("#today-habit").remove();
   }
@@ -13,7 +18,9 @@ function dayReport(parentElement, date) {
   const legend = document.createElement("legend");
 
   popup.classList.add("popup");
+
   legend.innerText = "Habits";
+
   fieldset.classList.add("form-container");
   fieldset.append(legend);
 
@@ -46,7 +53,7 @@ function dayReport(parentElement, date) {
   span.setAttribute("id", "today-habit");
 
   popup.append(span);
-  parentElement.append(popup);
+  parentContainer.append(popup);
 
   popup.showModal();
 }
