@@ -19,7 +19,10 @@ function editHabit(e) {
 
   const habitExists =
     habitData.find((item) => {
-      return item.name === document.querySelector("#edit-habit").value;
+      return (
+        item.name === document.querySelector("#edit-habit").value &&
+        item.id !== e.target.parentElement.id
+      );
     }) || null;
 
   if (!habitExists) {
