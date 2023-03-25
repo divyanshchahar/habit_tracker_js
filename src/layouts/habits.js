@@ -2,6 +2,7 @@ import deleteHabit from "../utils/deleteHabit";
 import pickerLikeDate from "../utils/pickerLikeDate";
 import minMaxDate from "../utils/minMaxDate";
 import editHabit from "../utils/editHabit";
+import calendar from "./calendar";
 
 /**
  * Function to render habits dialog box
@@ -22,6 +23,8 @@ function habits(parentContainer) {
 
   if (habitData) {
     const [minDate, maxDate] = minMaxDate();
+
+    const today = new Date();
 
     const dialog = document.createElement("dialog");
     const closeButton = document.createElement("button");
@@ -78,6 +81,10 @@ function habits(parentContainer) {
 
       deleteButton.addEventListener("click", (e) => {
         deleteHabit(e);
+        calendar(
+          document.querySelector("#root"),
+          `${today.getFullYear()}-${today.getMonth() + 1}`
+        );
       });
 
       editButton.innerText = "edit";
@@ -102,6 +109,10 @@ function habits(parentContainer) {
         input.classList.toggle("hidden");
         e.target.classList.toggle("hidden");
         editButton.classList.toggle("hidden");
+        calendar(
+          document.querySelector("#root"),
+          `${today.getFullYear()}-${today.getMonth() + 1}`
+        );
       });
 
       div.append(p);

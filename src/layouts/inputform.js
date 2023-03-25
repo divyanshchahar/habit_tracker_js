@@ -1,5 +1,6 @@
 import minMaxDate from "../utils/minMaxDate";
 import addHabit from "../utils/addHabit";
+import calendar from "./calendar";
 
 /**
  * Function to render input form for habits
@@ -11,6 +12,7 @@ function inputform(parentContainer) {
   }
 
   const [minDate, maxDate] = minMaxDate();
+  const today = new Date();
 
   const popup = document.createElement("dialog");
   const form = document.createElement("form");
@@ -59,6 +61,10 @@ function inputform(parentContainer) {
   submitButton.addEventListener("click", (e) => {
     addHabit(e);
     input.value = null;
+    calendar(
+      document.querySelector("#root"),
+      `${today.getFullYear()}-${today.getMonth() + 1}`
+    );
   });
 
   closeButton.innerText = "X";
