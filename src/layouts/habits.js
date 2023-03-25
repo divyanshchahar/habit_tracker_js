@@ -17,10 +17,20 @@ function habits(parentContainer) {
   if (habitData) {
     const [minDate, maxDate] = minMaxDate();
 
-    const span = document.createElement("dialog");
+    const dialog = document.createElement("dialog");
+    const closeButton = document.createElement("button");
 
-    span.setAttribute("id", "habit-list");
-    span.classList.add("popup");
+    closeButton.innerText = "X";
+    closeButton.classList.add("btn-close");
+
+    closeButton.addEventListener("click", () => {
+      document.querySelector("dialog").remove();
+    });
+
+    dialog.setAttribute("id", "habit-list");
+    dialog.classList.add("popup");
+
+    dialog.append(closeButton);
 
     habitData.map((item) => {
       const div = document.createElement("div");
@@ -95,10 +105,12 @@ function habits(parentContainer) {
       div.append(deleteButton);
       div.append(editButton);
       div.append(doneButton);
-      span.append(div);
+      dialog.append(div);
     });
-    parentContainer.append(span);
-    span.showModal();
+
+    parentContainer.append(dialog);
+
+    dialog.showModal();
   }
 }
 
