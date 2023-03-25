@@ -55,25 +55,32 @@ function habits(parentContainer) {
       div.classList.add("edit-habit-field");
 
       input.setAttribute("type", "text");
-      input.setAttribute("id", "edit-habit");
       input.setAttribute("value", item.name);
       input.classList.add("hidden");
 
+      input.addEventListener("change", (e) => {
+        input.value = e.target.value;
+      });
+
       startDate.setAttribute("type", "date");
-      startDate.setAttribute("id", "edit-start-date");
       startDate.setAttribute("name", "edit-start-date");
       startDate.setAttribute("value", pickerLikeDate(item.startDate));
       startDate.setAttribute("min", minDate);
       startDate.setAttribute("max", maxDate);
       startDate.classList.add("hidden");
+      startDate.addEventListener("change", () => {
+        startDate.value = e.target.value;
+      });
 
       endDate.setAttribute("type", "date");
-      endDate.setAttribute("id", "edit-end-date");
       endDate.setAttribute("name", "edit-end-date");
       endDate.setAttribute("value", pickerLikeDate(item.endDate));
       endDate.setAttribute("min", minDate);
       endDate.setAttribute("max", maxDate);
       endDate.classList.add("hidden");
+      endDate.addEventListener("change", () => {
+        endDate.value = e.target.value;
+      });
 
       p.innerText = `${item.name} from ${item.startDate} to ${item.endDate}`;
 
@@ -102,7 +109,7 @@ function habits(parentContainer) {
       doneButton.classList.add("hidden");
 
       doneButton.addEventListener("click", (e) => {
-        editHabit(e);
+        editHabit(input.value, startDate.value, endDate.value, e);
         p.classList.toggle("hidden");
         startDate.classList.toggle("hidden");
         endDate.classList.toggle("hidden");
