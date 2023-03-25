@@ -13,7 +13,8 @@ function calendar(rootElement, dateString) {
     document.getElementById("calendar").remove();
   }
 
-  const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
+  const habitData =
+    JSON.parse(window.localStorage.getItem("HABIT_DATA")) || null;
 
   const calendarElement = document.createElement("span");
 
