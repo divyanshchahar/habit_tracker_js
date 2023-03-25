@@ -56,7 +56,7 @@ function habits(parentContainer) {
       endDate.setAttribute("max", maxDate);
       endDate.classList.add("hidden");
 
-      p.innerText = item.name;
+      p.innerText = `${item.name} from ${item.startDate} to ${item.endDate}`;
 
       deleteButton.innerText = "delete";
 
