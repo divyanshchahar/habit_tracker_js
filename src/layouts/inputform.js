@@ -57,6 +57,7 @@ function inputform(parentContainer) {
 
   submitButton.addEventListener("click", (e) => {
     addHabit(e);
+    input.value = null;
   });
 
   form.append(inputLabel);
