@@ -12,7 +12,13 @@ function habits(parentContainer) {
     document.querySelector("#habit-list").remove();
   }
 
-  const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
+  const habitData =
+    JSON.parse(window.localStorage.getItem("HABIT_DATA")) || null;
+
+  if (!habitData || habitData.length === 0) {
+    alert("No habit exits, to edit habits first create some habits");
+    return;
+  }
 
   if (habitData) {
     const [minDate, maxDate] = minMaxDate();
