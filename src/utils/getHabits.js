@@ -5,6 +5,10 @@
  * @returns {Number} - Number of habits on the given date
  */
 function getHabits(date, habitData) {
+  if (!habitData) {
+    return "0/0";
+  }
+
   let habitCount = 0;
   let habitCompleted = 0;
 
