@@ -2,18 +2,17 @@ import utcLikeDate from "./utcLikeDate";
 
 /**
  * function to edit habits
+ * @param {String} habitName - name of the habit
+ * @param {String} habitStartDate - habit start date
+ * @param {String} habitEndDate - habit end date
  * @param {Object} e - event object
  */
-function editHabit(e) {
+function editHabit(habitName, habitStartDate, habitEndDate, e) {
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
 
-  const startDate = new Date(
-    utcLikeDate(document.querySelector("#edit-start-date").value)
-  );
+  const startDate = new Date(utcLikeDate(habitStartDate));
 
-  const endDate = new Date(
-    utcLikeDate(document.querySelector("#edit-end-date").value)
-  );
+  const endDate = new Date(utcLikeDate(habitEndDate));
 
   if (startDate >= endDate) {
     alert("end date should be later than start date");
@@ -22,10 +21,7 @@ function editHabit(e) {
 
   const habitExists =
     habitData.find((item) => {
-      return (
-        item.name === document.querySelector("#edit-habit").value &&
-        item.id !== e.target.parentElement.id
-      );
+      return item.name === habitName && item.id !== e.target.parentElement.id;
     }) || null;
 
   if (!habitExists) {
@@ -33,11 +29,9 @@ function editHabit(e) {
       if (item.id === e.target.parentElement.id) {
         return {
           ...item,
-          name: document.querySelector("#edit-habit").value,
-          startDate: utcLikeDate(
-            document.querySelector("#edit-start-date").value
-          ),
-          endDate: utcLikeDate(document.querySelector("#edit-end-date").value),
+          name: habitName,
+          startDate: utcLikeDate(habitStartDate),
+          endDate: utcLikeDate(habitEndDate),
         };
       }
       return item;
