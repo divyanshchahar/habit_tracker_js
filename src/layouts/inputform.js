@@ -21,6 +21,7 @@ function inputform(parentContainer) {
   const startDate = document.createElement("input");
   const endDate = document.createElement("input");
   const submitButton = document.createElement("input");
+  const closeButton = document.createElement("button");
 
   form.setAttribute("id", "input-form");
   popup.classList.add("popup");
@@ -60,6 +61,12 @@ function inputform(parentContainer) {
     input.value = null;
   });
 
+  closeButton.innerText = "X";
+  closeButton.classList.add("btn-close");
+  closeButton.addEventListener("click", () => {
+    document.querySelector("dialog").remove();
+  });
+
   form.append(inputLabel);
   form.append(input);
   form.append(startDateLabel);
@@ -68,6 +75,7 @@ function inputform(parentContainer) {
   form.append(endDate);
   form.append(submitButton);
 
+  popup.append(closeButton);
   popup.append(form);
   parentContainer.append(popup);
 
