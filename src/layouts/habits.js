@@ -109,7 +109,7 @@ function habits(parentContainer) {
       doneButton.classList.add("hidden");
 
       doneButton.addEventListener("click", (e) => {
-        editHabit(e);
+        editHabit(input.value, startDate.value, endDate.value, e);
         p.classList.toggle("hidden");
         startDate.classList.toggle("hidden");
         endDate.classList.toggle("hidden");
