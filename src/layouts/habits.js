@@ -55,12 +55,10 @@ function habits(parentContainer) {
       div.classList.add("edit-habit-field");
 
       input.setAttribute("type", "text");
-      input.setAttribute("id", "edit-habit");
       input.setAttribute("value", item.name);
       input.classList.add("hidden");
 
       startDate.setAttribute("type", "date");
-      startDate.setAttribute("id", "edit-start-date");
       startDate.setAttribute("name", "edit-start-date");
       startDate.setAttribute("value", pickerLikeDate(item.startDate));
       startDate.setAttribute("min", minDate);
@@ -68,7 +66,6 @@ function habits(parentContainer) {
       startDate.classList.add("hidden");
 
       endDate.setAttribute("type", "date");
-      endDate.setAttribute("id", "edit-end-date");
       endDate.setAttribute("name", "edit-end-date");
       endDate.setAttribute("value", pickerLikeDate(item.endDate));
       endDate.setAttribute("min", minDate);
