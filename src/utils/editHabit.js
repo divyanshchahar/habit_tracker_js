@@ -1,5 +1,9 @@
 import utcLikeDate from "./utcLikeDate";
 
+/**
+ * function to edit habits
+ * @param {Object} e - event object
+ */
 function editHabit(e) {
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
 
