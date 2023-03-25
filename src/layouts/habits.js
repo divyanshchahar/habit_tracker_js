@@ -58,12 +58,19 @@ function habits(parentContainer) {
       input.setAttribute("value", item.name);
       input.classList.add("hidden");
 
+      input.addEventListener("change", (e) => {
+        input.value = e.target.value;
+      });
+
       startDate.setAttribute("type", "date");
       startDate.setAttribute("name", "edit-start-date");
       startDate.setAttribute("value", pickerLikeDate(item.startDate));
       startDate.setAttribute("min", minDate);
       startDate.setAttribute("max", maxDate);
       startDate.classList.add("hidden");
+      startDate.addEventListener("change", () => {
+        startDate.value = e.target.value;
+      });
 
       endDate.setAttribute("type", "date");
       endDate.setAttribute("name", "edit-end-date");
@@ -71,6 +78,9 @@ function habits(parentContainer) {
       endDate.setAttribute("min", minDate);
       endDate.setAttribute("max", maxDate);
       endDate.classList.add("hidden");
+      endDate.addEventListener("change", () => {
+        endDate.value = e.target.value;
+      });
 
       p.innerText = `${item.name} from ${item.startDate} to ${item.endDate}`;
 
