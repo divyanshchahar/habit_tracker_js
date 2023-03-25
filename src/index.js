@@ -18,7 +18,6 @@ root.setAttribute("id", "root");
 
 addButton.innerText = "+";
 addButton.classList.add("btn");
-addButton.setAttribute("id", "add-habit-btn");
 
 addButton.addEventListener("click", () => {
   inputform(root);
