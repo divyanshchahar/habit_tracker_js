@@ -16,6 +16,7 @@ function dayReport(parentContainer, date) {
   const span = document.createElement("span");
   const fieldset = document.createElement("fieldset");
   const legend = document.createElement("legend");
+  const closeButton = document.createElement("button");
 
   popup.classList.add("popup");
 
@@ -23,6 +24,12 @@ function dayReport(parentContainer, date) {
 
   fieldset.classList.add("form-container");
   fieldset.append(legend);
+
+  closeButton.innerText = "X";
+  closeButton.classList.add("btn-close");
+  closeButton.addEventListener("click", () => {
+    document.querySelector("dialog").remove();
+  });
 
   habitData.map((item) => {
     const startDate = new Date(item.startDate);
@@ -52,6 +59,7 @@ function dayReport(parentContainer, date) {
 
   span.setAttribute("id", "today-habit");
 
+  popup.append(closeButton);
   popup.append(span);
   parentContainer.append(popup);
 
