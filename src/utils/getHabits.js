@@ -23,7 +23,7 @@ function getHabits(date, habitData) {
           `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
         )
       ) {
-        habitCompleted = +1;
+        habitCompleted += 1;
       }
     }
   });
