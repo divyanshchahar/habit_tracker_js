@@ -1,7 +1,11 @@
 import minMaxDate from "../utils/minMaxDate";
 import addHabit from "../utils/addHabit";
 
-function inputform(parentElement) {
+/**
+ * Function to render input form for habits
+ * @param {HTMLElement} parentContainer - HTML Element which will be the parent of the UI
+ */
+function inputform(parentContainer) {
   if (document.querySelector("#input-form")) {
     document.querySelector("#input-form").remove();
   }
@@ -22,8 +26,13 @@ function inputform(parentElement) {
   popup.classList.add("popup");
 
   inputLabel.setAttribute("for", "habit");
+  inputLabel.innerText = "Habit";
+
   startDate.setAttribute("for", "start-date");
+  startDateLabel.innerText = "Start Date";
+
   endDateLabel.setAttribute("for", "end-date");
+  endDateLabel.innerText = "End Date";
 
   input.setAttribute("type", "text");
   input.setAttribute("id", "habit");
@@ -46,10 +55,6 @@ function inputform(parentElement) {
   submitButton.setAttribute("type", "submit");
   submitButton.setAttribute("value", "Submit");
 
-  inputLabel.innerText = "Habit";
-  startDateLabel.innerText = "Start Date";
-  endDateLabel.innerText = "End Date";
-
   submitButton.addEventListener("click", (e) => {
     addHabit(e);
   });
@@ -63,7 +68,7 @@ function inputform(parentElement) {
   form.append(submitButton);
 
   popup.append(form);
-  parentElement.append(popup);
+  parentContainer.append(popup);
 
   popup.showModal();
 }

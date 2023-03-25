@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 /**
  * Adds a new habit
  * @param {Object} e - html event object
- * @returns
  */
 function addHabit(e) {
   e.preventDefault();

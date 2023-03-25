@@ -4,9 +4,9 @@ import getHabits from "../utils/getHabits";
 import renderDayReport from "../utils/renderDayReport";
 
 /**
- * Function to render `Calendar`
- * @param {HTMLElement} rootElement
- * @param {string``} dateString
+ * Function to render Calendar
+ * @param {HTMLElement} rootElement - HTML Element which is going to be the parent to the UI
+ * @param {String} dateString - Date in the form YYYY-M i.e. 2023-3
  */
 function calendar(rootElement, dateString) {
   if (document.getElementById("calendar")) {
@@ -38,7 +38,6 @@ function calendar(rootElement, dateString) {
     p.innerText = getHabits(item, habitData);
 
     div.innerText = item.getDate();
-
     div.classList.add(
       item.getMonth() == month ? "current-month" : "other-month"
     );
@@ -52,7 +51,6 @@ function calendar(rootElement, dateString) {
   });
 
   calendarElement.setAttribute("id", "calendar");
-
   rootElement.append(calendarElement);
 }
 

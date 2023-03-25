@@ -2,7 +2,6 @@ import header from "./layouts/header";
 import datePicker from "./componenets/datePicker";
 import inputform from "./layouts/inputform";
 import habits from "./layouts/habits";
-
 import calendar from "./layouts/calendar";
 
 import "./index.css";
@@ -10,36 +9,35 @@ import "./index.css";
 const today = new Date();
 
 const body = document.querySelector("body");
-const rootDiv = document.createElement("div");
+const root = document.createElement("div");
 const buttonContainer = document.createElement("div");
 const addButton = document.createElement("button");
 const editButton = document.createElement("button");
 
-rootDiv.setAttribute("id", "root");
+root.setAttribute("id", "root");
 
 addButton.innerText = "+";
-editButton.innerText = "edit";
-
 addButton.classList.add("btn");
+
+addButton.addEventListener("click", () => {
+  inputform(root);
+});
+
+editButton.innerText = "edit";
 editButton.classList.add("btn");
+
+editButton.addEventListener("click", () => {
+  habits(root);
+});
 
 buttonContainer.classList.add("button-container");
 
-addButton.addEventListener("click", () => {
-  inputform(rootDiv);
-});
-
-editButton.addEventListener("click", () => {
-  habits(rootDiv);
-});
-
-header(rootDiv);
-datePicker(buttonContainer, rootDiv);
+header(root);
+datePicker(buttonContainer, root);
 buttonContainer.append(addButton);
 buttonContainer.append(editButton);
-rootDiv.append(buttonContainer);
+root.append(buttonContainer);
 
-rootDiv.append(buttonContainer);
-body.append(rootDiv);
+body.append(root);
 
-calendar(rootDiv, `${today.getFullYear()}-${today.getMonth() + 1}`);
+calendar(root, `${today.getFullYear()}-${today.getMonth() + 1}`);

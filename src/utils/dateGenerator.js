@@ -1,7 +1,7 @@
 /**
- * Function to generate array of dates fro calendar display
- * @param {string} year - year represent as four digit number
- * @param {string} month - month strating from 0
+ * Function to generate array of dates for calendar
+ * @param {String} year - year represented as four digit number
+ * @param {String} month - month strating from 0
  */
 function dateGenerator(year, month) {
   const refrenceDay = new Date(year, month, 1);

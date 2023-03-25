@@ -1,3 +1,8 @@
+/**
+ * Function to toggle habits from dates
+ * @param {Object} e - HTML event object
+ * @param {Date} date - date of the day
+ */
 function toggleHabits(e, date) {
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
 

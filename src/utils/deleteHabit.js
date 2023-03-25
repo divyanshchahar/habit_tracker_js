@@ -1,3 +1,7 @@
+/**
+ * Function to delete habit
+ * @param {Object} e - event object
+ */
 function deleteHabit(e) {
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
 

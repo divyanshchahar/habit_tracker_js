@@ -1,5 +1,5 @@
 /**
- * Function to return dates in `YYY-MM-DD` format where month index starts from 1
+ * Function to return dates in `YYYY-MM-DD` format where month index starts from 1
  * @returns {Array} - Array of today's date and last date of the year
  */
 function minMaxDate() {
