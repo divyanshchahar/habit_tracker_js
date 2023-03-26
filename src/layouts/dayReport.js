@@ -43,6 +43,15 @@ function dayReport(parentContainer, date) {
       checkbox.setAttribute("type", "checkbox");
       checkbox.setAttribute("id", item.id);
       checkbox.setAttribute("name", item.name);
+
+      if (
+        item.completed.includes(
+          `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+        )
+      ) {
+        checkbox.setAttribute("checked", "");
+      }
+
       checkbox.addEventListener("change", (e) => {
         toggleHabits(e, date);
       });
