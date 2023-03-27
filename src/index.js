@@ -31,20 +31,28 @@ editButton.addEventListener("click", () => {
   habits(root);
 });
 
-downLoadLink.innerText = "Download Link";
-downLoadLink.setAttribute(
-  "href",
-  URL.createObjectURL(
-    new File(
-      [JSON.parse(JSON.stringify(window.localStorage.getItem("HABIT_DATA")))],
-      "data.json",
-      {
-        type: "application/json",
-      }
+downLoadLink.innerText = "Download Data";
+downLoadLink.setAttribute("href", "#");
+downLoadLink.addEventListener("click", () => {
+  const tempLink = document.createElement("a");
+
+  tempLink.setAttribute(
+    "href",
+    URL.createObjectURL(
+      new File(
+        [JSON.parse(JSON.stringify(window.localStorage.getItem("HABIT_DATA")))],
+        "data.json",
+        {
+          type: "application/json",
+        }
+      )
     )
-  )
-);
-downLoadLink.setAttribute("download", "data");
+  );
+
+  tempLink.setAttribute("download", "data");
+
+  tempLink.click();
+});
 
 buttonContainer.classList.add("button-container");
 
