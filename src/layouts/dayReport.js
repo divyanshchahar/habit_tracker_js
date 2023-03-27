@@ -1,4 +1,5 @@
 import toggleHabits from "../utils/toggleHabits";
+import calendar from "./calendar";
 
 /**
  * Funcion to render day report
@@ -11,6 +12,8 @@ function dayReport(parentContainer, date) {
   }
 
   const habitData = JSON.parse(window.localStorage.getItem("HABIT_DATA"));
+
+  const today = new Date();
 
   const popup = document.createElement("dialog");
   const span = document.createElement("span");
@@ -54,6 +57,10 @@ function dayReport(parentContainer, date) {
 
       checkbox.addEventListener("change", (e) => {
         toggleHabits(e, date);
+        calendar(
+          document.querySelector("#root"),
+          `${today.getFullYear()}-${today.getMonth() + 1}`
+        );
       });
 
       label.innerText = item.name;
