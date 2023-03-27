@@ -14,6 +14,7 @@ const buttonContainer = document.createElement("div");
 const addButton = document.createElement("button");
 const editButton = document.createElement("button");
 const downLoadLink = document.createElement("a");
+const uploadFileInput = document.createElement("input");
 
 root.setAttribute("id", "root");
 
@@ -54,6 +55,21 @@ downLoadLink.addEventListener("click", () => {
   tempLink.click();
 });
 
+uploadFileInput.setAttribute("type", "file");
+uploadFileInput.setAttribute("accept", ".json");
+uploadFileInput.addEventListener("change", (e) => {
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    window.localStorage.setItem(
+      "HABIT_DATA",
+      JSON.stringify(JSON.parse(reader.result))
+    );
+  };
+
+  reader.readAsText(e.target.files.item(0));
+});
+
 buttonContainer.classList.add("button-container");
 
 header(root);
@@ -61,6 +77,7 @@ datePicker(buttonContainer, root);
 buttonContainer.append(addButton);
 buttonContainer.append(editButton);
 buttonContainer.append(downLoadLink);
+buttonContainer.append(uploadFileInput);
 root.append(buttonContainer);
 
 body.append(root);
