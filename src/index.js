@@ -1,4 +1,3 @@
-import header from "./layouts/header";
 import datePicker from "./componenets/datePicker";
 import inputform from "./layouts/inputform";
 import habits from "./layouts/habits";
@@ -15,6 +14,7 @@ const addButton = document.createElement("button");
 const editButton = document.createElement("button");
 const downLoadLink = document.createElement("a");
 const uploadFileInput = document.createElement("input");
+const helpButton = document.createElement("a");
 
 root.setAttribute("id", "root");
 
@@ -70,14 +70,22 @@ uploadFileInput.addEventListener("change", (e) => {
   reader.readAsText(e.target.files.item(0));
 });
 
+helpButton.innerText = "How To";
+helpButton.setAttribute(
+  "href",
+  "https://github.com/divyanshchahar/habit_tracker_js"
+);
+helpButton.setAttribute("target", "_blank");
+
 buttonContainer.classList.add("button-container");
 
-header(root);
 datePicker(buttonContainer, root);
 buttonContainer.append(addButton);
 buttonContainer.append(editButton);
 buttonContainer.append(downLoadLink);
 buttonContainer.append(uploadFileInput);
+buttonContainer.append(helpButton);
+
 root.append(buttonContainer);
 
 body.append(root);
